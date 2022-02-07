@@ -16,7 +16,6 @@ while (isSunk == false) {
         ||(guess == location2 && loc2Status == false)
         || (guess == location3 && loc3Status == false)){
         alert("You already hit there!");
-
     }else if (guess < 0 || guess > 6) {
         alert("Invalid cell number! Please keep your input between 1 and 6!");
     }else {
