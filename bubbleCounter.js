@@ -39,17 +39,21 @@ for (var i = 0; i < scores.length; i++) {
 
 console.log("Best Solutions: " + bestSolutions);
 
-var cost = 100;
-var index;
-for(i=0; i < scores.length; i++) {
+
+
     function getMostCostEffectiveSolution(scores, costs, highScore) {
-        if (scores[i] == highScore) {
+        var cost = 100;
+        var index;
+        var scoresMax = scores.length;
+        for(i = 0; i < scoresMax; i++) {
+          if (scores[i] == highScore) {
             if (cost > costs[i]) {
-                cost = cost[i];
+                cost = costs[i];
                 index = i;
             }
         }
     }
+    return index;
 }
 var mostCostEffective = getMostCostEffectiveSolution();
 console.log("Bubble Solution #" + mostCostEffective + "is the most cost effective");
