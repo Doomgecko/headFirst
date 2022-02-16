@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object Model Demo</title>
+</head>
+<body>
+<!-- As a last step, we will turn the header and paragraphs into buttons. -->
+<h1 id="myHeader">Header</h1>
+<p id="myParagraph">Paragraph</p>
+
+<hr/>
+
+<form>
+    <label for="headerValue">Header Text:</label>
+    <input type="text" id="headerValue" name="headerValue"><br><br>
+    <label for="parValue">Paragraph Text:</label>
+    <textarea id="parValue" name="parValue" rows="4" cols="50"></textarea>
+</form>
+
+<button onclick="setHeaderText();setParagraphText();">Do the thing!</button>
+
+<script>
+    // This function is OK. But it is doing too much. Having a function
+    // responsible for more than one thing makes it difficult to maintain code.
+    // We will see why in class.
+    function setHeaderText() {
+        let headerText = document.getElementById("headerValue").valueOf().value;
+        document.getElementById("myHeader").innerHTML = headerText;
+    }
+    function setParagraphText(){
+        let paragraphText = document.getElementById("paragraphValue").valueOf().value;
+        document.getElementById("myParagraph").innerHTML = paragraphText;
+    }
+    function updateText(){
+
+    }
+</script>
+
+</body>
+</html>

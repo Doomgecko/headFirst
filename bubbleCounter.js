@@ -56,4 +56,4 @@ console.log("Best Solutions: " + bestSolutions);
     return index;
 }
 var mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
-console.log("Bubble Solution #" + mostCostEffective + "is the most cost effective");
+console.log("Bubble Solution #" + mostCostEffective + " is the most cost effective");
