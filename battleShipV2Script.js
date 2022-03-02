@@ -1,3 +1,5 @@
+window.onLoad = init();
+
 let controller = {
     guesses: 0,
     processGuess: function(guess){
@@ -67,7 +69,7 @@ let model = {
 
 
 function parseGuess(guess){
-    let alphabet = ["A", "B", "C,", "D", "E", "F", "G"];
+    let alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
     if (guess === null || guess.length !== 2){
         alert("Oops, please enter a letter and a number on the board.")
@@ -87,7 +89,7 @@ function parseGuess(guess){
     return null;
 }
 
-function init(){
+function init() {
     let fireButton = document.getElementById("fireButton");
     fireButton.onclick = handleFireButton;
 }
@@ -99,4 +101,5 @@ function handleFireButton() {
     guessInput.value = "";
 }
 
-window.onLoad = init;
+
+
