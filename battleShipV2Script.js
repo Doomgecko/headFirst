@@ -1,7 +1,14 @@
 let controller = {
     guesses: 0,
     processGuess: function(guess){
+        let location = parseGuess(guess);
+        if (location){
+            this.guesses++;
+            let hit = model.fire(location);
+            if (hit && model.shipsSunk === model.numShips){
 
+            }
+        }
     }
 };
 
@@ -73,6 +80,23 @@ function parseGuess(guess){
             alert("Oops, that isn't on the board!");
         }else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize){
             alert("Oops, that's off the board!");
+        }else{
+            return row + column;
         }
     }
+    return null;
 }
+
+function init(){
+    let fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+}
+
+function handleFireButton() {
+    let guessInput = document.getElementById("guessInput");
+    let guess = guessInput.value;
+    controller.processGuess(guess);
+    guessInput.value = "";
+}
+
+window.onLoad = init;
