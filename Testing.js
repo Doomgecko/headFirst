@@ -1,3 +1,5 @@
+window.onLoad = init;
+
 let controller = {
     guesses: 0,
     processGuess: function(guess){
@@ -7,25 +9,25 @@ let controller = {
             let hit = model.fire(location);
             if (hit && model.shipsSunk === model.numShips){
                 view.displayMessage("You sank all my battleships, in " + this.guesses +
-                " guesses");
+                    " guesses");
             }
         }
     }
 };
 
 let view = {
-displayMessage : function (msg){
-    let messageArea = document.getElementById("messageArea");
-    messageArea.innerHTML = msg;
-},
-displayHit : function(location){
-    let cell = document.getElementById(location);
-    cell.setAttribute("class","hit");
-},
-displayMiss : function(location){
-    let cell = document.getElementById(location);
-    cell.setAttribute("class","miss");
-}
+    displayMessage : function (msg){
+        let messageArea = document.getElementById("messageArea");
+        messageArea.innerHTML = msg;
+    },
+    displayHit : function(location){
+        let cell = document.getElementById(location);
+        cell.setAttribute("class","hit");
+    },
+    displayMiss : function(location){
+        let cell = document.getElementById(location);
+        cell.setAttribute("class","miss");
+    }
 
 };
 
@@ -35,8 +37,8 @@ let model = {
     shipLength:3,
     shipsSunk: 0,
     ships: [{locations: [0, 0, 0], hits: ["", "", ""]},
-            {locations: [0, 0, 0], hits: ["", "", ""]},
-            {locations: [0, 0, 0], hits: ["", "", ""]}],
+        {locations: [0, 0, 0], hits: ["", "", ""]},
+        {locations: [0, 0, 0], hits: ["", "", ""]}],
     fire: function(guess){
         for (let i = 0; i< this.numShips; i++){
             let ship = this.ships[i];
@@ -73,7 +75,7 @@ let model = {
         }
     },
     generateShip: function(){
-        let direction = Math.floor(Math.random() * 2);
+        let direction = Math.floor(Math.random() * 2)
         let row;
         let col;
         if (direction === 1){
@@ -97,15 +99,15 @@ let model = {
     collision: function(locations){
         for (let i = 0; i < this.numShips; i++){
             let ship = this.ships[i];
-            for (let j = 0; j < locations.length; j++){
-                if (ship.locations.indexOf(locations[j]) >= 0){
+            for (let j = 0; i < locations.length; j++){
+                if (ship.locations.indexOf.locations[j] >= 0){
                     return true;
                 }
             }
         }
         return false;
     }
-};
+}
 
 
 function parseGuess(guess){
@@ -142,7 +144,3 @@ function handleFireButton() {
     guessInput.value = "";
 
 }
-
-
-
-
