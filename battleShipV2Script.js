@@ -1,4 +1,4 @@
-window.onLoad = init();
+window.onLoad = init;
 
 let controller = {
     guesses: 0,
@@ -67,7 +67,7 @@ let model = {
         return true;
     },
     generateShipLocations: function(){
-        let locations;
+        var locations;
         for (let i = 0; i < this.numShips; i++){
             do {locations = this.generateShip();
             }while (this.collision(locations));
@@ -75,7 +75,7 @@ let model = {
         }
     },
     generateShip: function(){
-        let direction = Math.floor(Math.random() * 2)
+        let direction = Math.floor(Math.random() * 2);
         let row;
         let col;
         if (direction === 1){
@@ -99,16 +99,15 @@ let model = {
     collision: function(locations){
         for (let i = 0; i < this.numShips; i++){
             let ship = this.ships[i];
-            for (let j = 0; i < locations.length; j++){
-                if (ship.locations.indexOf.locations[j] >= 0){
+            for (let j = 0; j < locations.length; j++){
+                if (ship.locations.indexOf(locations[j]) >= 0){
                     return true;
-                    alert("oh")
                 }
             }
         }
         return false;
     }
-}
+};
 
 
 function parseGuess(guess){
