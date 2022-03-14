@@ -5,7 +5,6 @@ function init() {
 }
 
 function showAnswer() {
-    alert("Hi");
     let image = document.getElementById("zero");
     image.src = "zero.jpg";
 }
