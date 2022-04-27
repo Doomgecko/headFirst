@@ -1,6 +1,6 @@
 let JSONObj = {};
-let charNum = 1;
-let chars = 5;
+let chars = 4;
+let charNum;
 
 window.onload = init;
 
@@ -17,19 +17,19 @@ function loadCharacters(){
 }
 
 loadCharacters();
+nextButtonPress();
 
 function init(){
     nextButton.onclick = nextButtonPress;
 }
 
-let nextButton = document.getElementById("sub");
-document.getElementById("charName").innerHTML = JSONObj[charNum].name;
-
 function nextButtonPress(eventObj){
     if(charNum === chars){
-        charNum = 1;
+        charNum = 0;
     }else {
         charNum++;
     }
+    let nextButton = document.getElementById("sub");
+    document.getElementById("charName").innerHTML = JSONObj[charNum].name;
 }
 
