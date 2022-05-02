@@ -16,11 +16,13 @@ function loadCharacters(){
     characterData.send();
 }
 
-loadCharacters();
-nextButtonPress();
-
 function init(){
-    nextButton.onclick = nextButtonPress;
+    loadCharacters();
+    document.getElementById("sub").onclick = nextButtonPress;
+
+    //TODO: Sort out why we can't use length yet
+    charNum = JSONObj[charNum].length;
+    nextButtonPress();
 }
 
 function nextButtonPress(eventObj){
@@ -32,4 +34,6 @@ function nextButtonPress(eventObj){
     let nextButton = document.getElementById("sub");
     document.getElementById("charName").innerHTML = JSONObj[charNum].name;
 }
+
+
 
