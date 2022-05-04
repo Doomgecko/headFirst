@@ -21,7 +21,7 @@
 
 <?php
 $ascendTo = $_GET["fibNum"];
-$keepGoing = 0;
+$keepGoing = 1;
 function spiralOut($keepGoing){
     global $keepGoing, $ascendTo;
            if($ascendTo <= 2){
@@ -32,7 +32,7 @@ function spiralOut($keepGoing){
     }
 
 }
+spiralOut($keepGoing);
 ?>
->
 </body>
 </html>
