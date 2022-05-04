@@ -22,12 +22,16 @@
 <?php
 $ascendTo = $_GET["fibNum"];
 $keepGoing = 1;
+$X = 0;
+echo "Ascend To:". $ascendTo;
+echo "Keep Going:". $keepGoing;
 function spiralOut($keepGoing){
-    global $keepGoing, $ascendTo;
+    global $keepGoing, $ascendTo, $X;
+    echo "Keep Going:". $keepGoing;
            if($ascendTo <= 2){
                return $ascendTo -1;
-           }else if($keepGoing > $ascendTo){
-            $ascendTo++;
+           }else if($ascendTo > $X){
+               $X++;
             return $keepGoing + spiralOut($keepGoing -1);
     }
 
