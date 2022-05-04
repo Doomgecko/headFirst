@@ -21,22 +21,15 @@
 
 <?php
 $ascendTo = $_GET["fibNum"];
-$keepGoing = 1;
-$X = 0;
-echo "Ascend To:". $ascendTo;
-echo "Keep Going:". $keepGoing;
-function spiralOut($keepGoing){
-    global $keepGoing, $ascendTo, $X;
-    echo "Keep Going:". $keepGoing;
-           if($ascendTo <= 2){
-               return $ascendTo -1;
-           }else if($ascendTo > $X){
-               $X++;
-            return $keepGoing + spiralOut($keepGoing -1);
-    }
-
+function spiralOut($ascendTo){
+           if($ascendTo <= 1){
+               return $ascendTo;
+           }
+           else {
+               return spiralOut($ascendTo-1) + spiralOut($ascendTo-2);
+           }
 }
-echo spiralOut($keepGoing);
+echo spiralOut($ascendTo);
 ?>
 </body>
 </html>
