@@ -20,7 +20,7 @@
 <br>
 
 <?php
-$ascendTo = $_GET["fibNum"];
+$ascendTo = $_GET["fibNum"]+1;
 function spiralOut($ascendTo){
            if($ascendTo <= 1){
                return $ascendTo;
