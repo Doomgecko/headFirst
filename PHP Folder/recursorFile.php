@@ -12,7 +12,7 @@
 <body>
 <h1>Welcome to the Recursive Chamber</h1>
 <p>The spiral is formed at your whim...</p>
-<form action = "recursorFile.php">
+<form action = "recursorFile.php" method= "get">
     <input type="number" placeholder="Number: 1-100" id = "fibNum" name = "fibNum" min="1" max="100">
     <label for="fibNum">Number: </label>
     <input type="submit" id = "sub" name="sub">
@@ -32,7 +32,7 @@ function spiralOut($keepGoing){
     }
 
 }
-spiralOut($keepGoing);
+echo spiralOut($keepGoing);
 ?>
 </body>
 </html>
